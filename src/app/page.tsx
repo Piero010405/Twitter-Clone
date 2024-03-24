@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { PostsList } from './components/posts-list'
 import { type Database } from './types/database'
 import { ComposePost } from './components/compose-post'
+import { HeaderBarFollowing } from './components/header-bar-following'
 export default async function Home() {
   // * SUPABASE
   // * pnpm install @supabase/auth-helpers-nextjs @supabase/supabase-js
@@ -30,8 +31,11 @@ export default async function Home() {
     <>
       <main className='flex min-h-screen flex-col items-center justify-between'>
         <section className='max-w-[600px] w-full mx-auto border-r border-l border-white/20 min-h-screen'>
+          <HeaderBarFollowing />
           <ComposePost userAvatarUrl={session.user?.user_metadata.avatar_url} />
-          <PostsList posts={posts} />
+          {
+            (posts != null) && <PostsList posts={posts} />
+          }
         </section>
         <AuthButtonServer />
       </main>
