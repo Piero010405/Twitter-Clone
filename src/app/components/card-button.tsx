@@ -12,13 +12,13 @@ export function CardButton({ children, stat, color }: { children: React.ReactNod
     }
 
     return (
-        <button className="flex flex-row justify-center items-center group ">
+        <a className="flex flex-row justify-center items-center group cursor-pointer">
             <span className={`${colorVariants[color]} ${backgroundVariants[color]} group-hover:opacity-80 rounded-full p-1 transition-all ease-linear`}>
                 {children}
             </span>
             <span className={`text-sm ${colorVariants[color]}`}>
                 {stat}
             </span>
-        </button>
+        </a>
     )
 }
