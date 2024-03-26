@@ -1,7 +1,7 @@
 'use client'
 import { Card, CardHeader, CardBody, CardFooter, Avatar } from '@nextui-org/react'
 // import { useState } from 'react'
-import { IconMessageCircle, IconHeart, IconRepeat, IconChartBar, IconBookmark, IconShare2 } from '@tabler/icons-react'
+import { IconMessageCircle, IconHeart, IconRepeat, IconChartBar, IconBookmark, IconShare2, IconDots } from '@tabler/icons-react'
 import { CardButton } from './card-button'
 
 export function PostCard({
@@ -24,16 +24,27 @@ export function PostCard({
                 </div>
             </CardHeader>
 
-            <article className='mt-3 w-full'>
-                <CardBody className="px-3 py-0 text-xm text-white-400">
-                    <div className="flex flex-row gap-1 items-start justify-self-end mb-2">
-                        <h4 className="text-small font-semibold  text-default-600">{userFullName}</h4>
-                        <h5 className="text-small tracking-tight text-default-400">@{userName}</h5>
-                    </div>
-                    <p>
-                        {content}
-                    </p>
-                </CardBody>
+            <article className='mt-3 w-full flex flex-col'>
+                <div className='flex flex-row items-center justify-between'>
+                    <CardBody className="px-3 py-0 text-xm text-white-400">
+                        <div className="flex flex-row gap-1 items-start justify-self-end mb-2">
+                            <h4 className="text-small font-semibold  text-default-600">{userFullName}</h4>
+                            <h5 className="text-small tracking-tight text-default-400">@{userName}</h5>
+                        </div>
+                        <p>
+                            {content}
+                        </p>
+                    </CardBody>
+
+                    <aside className='text-default-400 flex justify-end items-start'>
+                        <button className={'cursor-pointer mr-3'}>
+                            <CardButton stat={''} color="blue">
+                                <IconDots className='size-5' />
+                            </CardButton>
+                        </button>
+                    </aside>
+
+                </div>
 
                 <CardFooter className="gap-3 justify-between text-default-400">
                     <CardButton stat={19} color="blue">

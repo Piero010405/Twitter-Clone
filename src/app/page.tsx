@@ -6,6 +6,10 @@ import { PostsList } from './components/posts-list'
 import { type Database } from './types/database'
 import { ComposePost } from './components/compose-post'
 import { HeaderBarFollowing } from './components/header-bar-following'
+import { TwitterCard } from './components/twitter-card'
+import { WhoFollowList } from './components/who-to-follow-list'
+import { TrendList } from './components/trend-list'
+import { HeaderSearchBar } from './components/header-search-bar'
 export default async function Home() {
   // * SUPABASE
   // * pnpm install @supabase/auth-helpers-nextjs @supabase/supabase-js
@@ -29,7 +33,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className='flex min-h-screen flex-col items-center justify-between'>
+      <main className='flex flex-row min-h-screen items-center justify-between'>
         <section className='max-w-[600px] w-full mx-auto border-r border-l border-white/20 min-h-screen'>
           <HeaderBarFollowing />
           <ComposePost userAvatarUrl={session.user?.user_metadata.avatar_url} />
@@ -37,7 +41,19 @@ export default async function Home() {
             (posts != null) && <PostsList posts={posts} />
           }
         </section>
-        <AuthButtonServer />
+
+        <section className='min-h-screen mx-auto flex flex-col gap-y-5'>
+          <HeaderSearchBar />
+          <TwitterCard tittle='Trends for you'>
+            <TrendList />
+          </TwitterCard>
+
+          <TwitterCard tittle='Who to follow'>
+            <WhoFollowList />
+          </TwitterCard>
+        </section>
+
+        {/* <AuthButtonServer /> */}
       </main>
     </>
   )
