@@ -23,7 +23,7 @@ export function FollowCard({ children, userName = 'unknown', initialIsFollowing 
             </header>
 
             <aside>
-                <button className={`text-black bg-white rounded-full px-4 py-2 font-bold cursor-pointer border border-white ${isFollowing ? 'bg-inherit text-white border border-white/20 w-24 hover:text-red-500 hover:bg-red-500/10 hover:border hover:border-red-500 group' : ''}`} onClick={handleClick}>
+                <button className={`text-black rounded-full px-4 py-2 font-bold cursor-pointer border border-white ${isFollowing ? 'bg-[#16181C] text-white border border-white/20 w-24 hover:text-red-500 hover:bg-red-500/10 hover:border hover:border-red-500 group' : 'bg-white'}`} onClick={handleClick}>
                     <span className='block group-hover:hidden'>{text}</span>
                     <span className='hidden group-hover:block'>Unfollow</span>
                 </button>

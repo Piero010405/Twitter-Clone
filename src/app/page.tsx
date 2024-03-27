@@ -35,10 +35,10 @@ export default async function Home() {
   return (
     <>
       <main className='flex flex-row justify-between'>
-        <section className='ml-auto'>
+        <section className='ml-auto mt-0'>
           <NavBar />
         </section>
-        <section className='max-w-[600px] w-full mx-auto border-r border-l border-white/20 min-h-screen'>
+        <section className='max-w-[600px] mx-5 w-full border-r border-l border-white/20 min-h-screen'>
           <HeaderBarFollowing />
           <ComposePost userAvatarUrl={session.user?.user_metadata.avatar_url} />
           {
