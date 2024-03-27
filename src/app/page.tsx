@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       <main className='flex flex-row justify-between'>
         <section className='ml-auto mt-0'>
-          <NavBar />
+          <NavBar userSession={session.user}/>
         </section>
         <section className='max-w-[600px] mx-5 w-full border-r border-l border-white/20 min-h-screen'>
           <HeaderBarFollowing />
