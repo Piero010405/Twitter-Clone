@@ -10,6 +10,7 @@ import { TwitterCard } from './components/twitter-card'
 import { WhoFollowList } from './components/who-to-follow-list'
 import { TrendList } from './components/trend-list'
 import { HeaderSearchBar } from './components/header-search-bar'
+import { NavBar } from './components/nav-bar'
 export default async function Home() {
   // * SUPABASE
   // * pnpm install @supabase/auth-helpers-nextjs @supabase/supabase-js
@@ -33,7 +34,10 @@ export default async function Home() {
 
   return (
     <>
-      <main className='flex flex-row min-h-screen items-center justify-between'>
+      <main className='flex flex-row justify-between'>
+        <section className='ml-auto'>
+          <NavBar />
+        </section>
         <section className='max-w-[600px] w-full mx-auto border-r border-l border-white/20 min-h-screen'>
           <HeaderBarFollowing />
           <ComposePost userAvatarUrl={session.user?.user_metadata.avatar_url} />
@@ -42,7 +46,7 @@ export default async function Home() {
           }
         </section>
 
-        <section className='min-h-screen mx-auto flex flex-col gap-y-5'>
+        <section className='mr-auto flex flex-col gap-y-4'>
           <HeaderSearchBar />
           <TwitterCard tittle='Trends for you'>
             <TrendList />
