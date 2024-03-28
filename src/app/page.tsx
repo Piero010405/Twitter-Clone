@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       <main className='flex flex-row justify-between'>
         <section className='ml-auto mt-0'>
-          <NavBar userSession={session.user}/>
+          <NavBar userSession={session.user} />
         </section>
         <section className='max-w-[600px] mx-5 w-full border-r border-l border-white/20 min-h-screen'>
           <HeaderBarFollowing />
@@ -46,7 +46,7 @@ export default async function Home() {
           }
         </section>
 
-        <section className='mr-auto flex flex-col gap-y-4'>
+        <section className='mr-auto lg:flex flex-col gap-y-4 hidden'>
           <HeaderSearchBar />
           <TwitterCard tittle='Trends for you'>
             <TrendList />

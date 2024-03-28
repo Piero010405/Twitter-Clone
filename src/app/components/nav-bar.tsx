@@ -10,8 +10,8 @@ export function NavBar({ userSession }: { userSession: User | null }) {
     const userAvatarUrl = userSession?.user_metadata?.avatar_url
 
     return (
-        <nav className="sticky top-0 md:min-w-[260px] w-full flex flex-col justify-between gap-y-7">
-            <ul className='flex flex-col gap-y-2 w-full'>
+        <nav className="sticky top-0 lg:min-w-[260px] w-full flex flex-col justify-between gap-y-7 items-center">
+            <ul className='flex flex-col gap-y-2 w-full items-center lg:items-start'>
                 <li>
                     <NavItems tittle={null}>
                         <IconBrandX className='size-9' />
