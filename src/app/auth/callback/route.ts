@@ -20,5 +20,8 @@ export async function GET(request: NextRequest) {
   }
 
   // redirigimos a la url original
-  return NextResponse.redirect(requestUrl.origin)
+  // return NextResponse.redirect(requestUrl.origin)
+  const originalUrl =
+    requestUrl.origin + requestUrl.pathname + requestUrl.search
+  return NextResponse.redirect(originalUrl)
 }
