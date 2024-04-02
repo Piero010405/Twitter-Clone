@@ -1,11 +1,11 @@
 import { PostCard } from './post-card'
 import { type Post } from '../types/posts'
 
-export function PostsList({ posts }: { posts: Post[] }) {
+export function PostsList({ posts }: { posts: Post[] | any }) {
     return (
         <>
             {
-                posts?.map((post) => {
+                posts?.map((post: Post) => {
                     const {
                         user_name: userName,
                         avatar_url: avatarUrl,

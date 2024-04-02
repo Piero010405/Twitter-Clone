@@ -1,6 +1,6 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs' // usando el Server Component Client porque estamos en un Server Component
 import { cookies } from 'next/headers'
-import { AuthButtonServer } from './components/auth-button-server'
+// import { AuthButtonServer } from './components/auth-button-server'
 import { redirect } from 'next/navigation'
 import { PostsList } from './components/posts-list'
 import { type Database } from './types/database'
