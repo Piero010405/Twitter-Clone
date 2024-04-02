@@ -12,7 +12,7 @@ export function AuthButton({ session }: { session: Session | null }) {
         await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
-                redirectTo: 'http://localhost:3000/auth/callback' // <-- lo vamos a redirigir a un endpoint de nuestra aplicacion
+                redirectTo: '/auth/callback' // <-- lo vamos a redirigir a un endpoint de nuestra aplicacion
             }
         })
     }
