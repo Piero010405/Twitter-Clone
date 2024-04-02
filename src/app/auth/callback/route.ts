@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get('code')
   // Obtenemos el token desde las SEARCH PARAMAS
 
-  if (code != null) {
+  if (code !== null) {
     const supabase = createRouteHandlerClient({ cookies })
     // usando el codigo que le hemos pasado por la url
     // nos devuelve la sesion de usuario
@@ -21,7 +21,8 @@ export async function GET(request: NextRequest) {
 
   // redirigimos a la url original
   // return NextResponse.redirect(requestUrl.origin)
-  const originalUrl =
-    requestUrl.origin + requestUrl.pathname + requestUrl.search
-  return NextResponse.redirect(originalUrl)
+  return NextResponse.redirect('/')
+  // const originalUrl =
+  //   requestUrl.origin + requestUrl.pathname + requestUrl.search
+  // return NextResponse.redirect(originalUrl)
 }
