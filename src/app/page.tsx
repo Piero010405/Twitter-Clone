@@ -19,18 +19,16 @@ export default async function Home() {
 
   const { data: { session } } = await supabase.auth.getSession()
 
+  // REDIRIGIMOS AL LOGIN sin next auth
+  if (session === null) {
+    redirect('/login')
+  }
+
   // * Asi hacemos un Select
   const { data: posts } = await supabase
     .from('posts')
     .select('*, users(*)')
     .order('created_at', { ascending: false })
-
-  // REDIRIGIMOS AL LOGIN sin next auth
-  if (session === null) {
-    return (
-      redirect('/login')
-    )
-  }
 
   return (
     <>

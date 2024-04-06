@@ -20,6 +20,6 @@ export async function GET(request: NextRequest) {
   }
 
   // redirigimos a la url original
-  // return NextResponse.redirect(requestUrl.origin)
-  return NextResponse.redirect('/')
+  return NextResponse.redirect(requestUrl.origin)
+  // return NextResponse.redirect('/')
 }
